@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { BrowserRouter , Route, Routes } from 'react-router-dom';
+import { BrowserRouter , Route, Routes ,useNavigate} from 'react-router-dom';
 import { Signup }from './components/Signup';
 import { Login } from './components/Login';
 import { Dashboard } from './components/Dashboard';
 import "core-js/stable/atob";
 import { jwtDecode } from 'jwt-decode'; 
+import LandingPage from './components/LandingPage';
 
 
 function App () {
@@ -20,9 +21,10 @@ function App () {
       
       <div>
         
-        <h1>Donation</h1>
-        
         <Routes>
+
+          <Route path="/" element={<LandingPage />} />
+
           <Route path="/signup" element={<Signup />} />
       
           <Route
